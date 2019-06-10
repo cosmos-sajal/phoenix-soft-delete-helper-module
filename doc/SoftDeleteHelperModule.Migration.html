@@ -141,19 +141,19 @@ Functions          </h1>
           </div>
   <section class="docstring">
 <p>Adds deleted_at and is_deleted column to a table. This column is used to track if an item is deleted or not and when</p>
-<pre><code class="nohighlight makeup elixir"><span class="kd">defmodule</span><span class="w"> </span><span class="nc">MyApp.Repo.Migrations.CreateUser</span><span class="w"> </span><span class="k" data-group-id="4099011599-1">do</span><span class="w">
+<pre><code class="nohighlight makeup elixir"><span class="kd">defmodule</span><span class="w"> </span><span class="nc">MyApp.Repo.Migrations.CreateUser</span><span class="w"> </span><span class="k" data-group-id="3552980787-1">do</span><span class="w">
   </span><span class="kn">use</span><span class="w"> </span><span class="nc">Ecto.Migration</span><span class="w">
 
   </span><span class="kn">import</span><span class="w"> </span><span class="nc">SoftDeleteHelperModule.Migration</span><span class="w">
 
-  </span><span class="kd">def</span><span class="w"> </span><span class="nf">change</span><span class="w"> </span><span class="k" data-group-id="4099011599-2">do</span><span class="w">
-    </span><span class="n">create</span><span class="w"> </span><span class="n">table</span><span class="p" data-group-id="4099011599-3">(</span><span class="ss">:users</span><span class="p" data-group-id="4099011599-3">)</span><span class="w"> </span><span class="k" data-group-id="4099011599-4">do</span><span class="w">
+  </span><span class="kd">def</span><span class="w"> </span><span class="nf">change</span><span class="w"> </span><span class="k" data-group-id="3552980787-2">do</span><span class="w">
+    </span><span class="n">create</span><span class="w"> </span><span class="n">table</span><span class="p" data-group-id="3552980787-3">(</span><span class="ss">:users</span><span class="p" data-group-id="3552980787-3">)</span><span class="w"> </span><span class="k" data-group-id="3552980787-4">do</span><span class="w">
       </span><span class="n">add</span><span class="w"> </span><span class="ss">:firt_name</span><span class="p">,</span><span class="w"> </span><span class="ss">:string</span><span class="w">
 
-      </span><span class="n">soft_delete_columns</span><span class="p" data-group-id="4099011599-5">(</span><span class="p" data-group-id="4099011599-5">)</span><span class="w">
-    </span><span class="k" data-group-id="4099011599-4">end</span><span class="w">
-  </span><span class="k" data-group-id="4099011599-2">end</span><span class="w">
-</span><span class="k" data-group-id="4099011599-1">end</span></code></pre>
+      </span><span class="n">soft_delete_columns</span><span class="p" data-group-id="3552980787-5">(</span><span class="p" data-group-id="3552980787-5">)</span><span class="w">
+    </span><span class="k" data-group-id="3552980787-4">end</span><span class="w">
+  </span><span class="k" data-group-id="3552980787-2">end</span><span class="w">
+</span><span class="k" data-group-id="3552980787-1">end</span></code></pre>
   </section>
 </section>
           </div>
