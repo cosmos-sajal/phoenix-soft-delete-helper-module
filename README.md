@@ -114,3 +114,6 @@ Your migration file should look like this -
       end
 
 ```
+
+#### Hex package -
+https://hex.pm/packages/soft_delete_helper_module
