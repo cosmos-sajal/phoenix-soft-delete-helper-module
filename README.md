@@ -89,3 +89,28 @@ MyRepo.Repo.update(deleted_entity)
 
 This will update the DB table with is_deleted set to true and deleted_at set to now time.
 ```
+
+- Index on is_deleted column using `create_index_on_soft_delete`
+This will create an index on is_deleted column of the table
+
+#### Examples -
+```
+Your migration file should look like this -
+
+      defmodule MyApp.Repo.Migrations.CreateUser do
+        use Ecto.Migration
+
+        import SoftDeleteHelperModule.Migration
+
+        def change do
+          create table(:users) do
+            add :firt_name, :string
+
+            soft_delete_columns()
+          end
+          
+          create_index_on_soft_delete("users")
+        end
+      end
+
+```
