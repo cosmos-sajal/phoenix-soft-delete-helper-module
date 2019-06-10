@@ -70,3 +70,22 @@ This returns #Ecto.Query<from u in "users", where: u.is_deleted == false, select
 When you try to get the rows using MyApp.Repo.all(soft_deleted_query), this will return
 all the non deleted entries
 ```
+
+- `delete_entity(struct)`
+
+This function returns a changeset with the entity deleted.
+
+#### Example -
+```
+Get the struct you want to delete as follows -
+entity = MyRepo.Repo.get(MyRepo.User, 1)
+
+pass this entity to delete_entity function as follows -
+deleted_entity = SoftDeleteHelperModule.Schema.delete_entity(entity)
+This will return a changeset with is_deleted set to true and deleted_at set to now time
+
+Now update the deleted_entity using -
+MyRepo.Repo.update(deleted_entity)
+
+This will update the DB table with is_deleted set to true and deleted_at set to now time.
+```
