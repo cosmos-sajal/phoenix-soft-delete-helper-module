@@ -50,3 +50,23 @@ This will install the dependency in your project.
 ```
 
 - After these changes, run the migration using `mix ecto.migrate`, this will create `users` table in your DB with columns `is_deleted` and `deleted_at`.
+
+#### Additional Functions and how to use them -
+- `with_non_soft_delete(query)`
+
+This function returns an ecto query with a where clause of all non deleted entries in your table.
+
+Pass an ecto query as parameter
+
+#### Example -
+```
+query = from(u in "users", select: u.id)
+This returns #Ecto.Query<from u in "users", select: u.id>
+
+Now pass the above query to the function as follows -
+soft_deleted_query = SoftDeleteHelperModule.Schema.with_non_soft_delete(query)
+This returns #Ecto.Query<from u in "users", where: u.is_deleted == false, select: u.id>
+
+When you try to get the rows using MyApp.Repo.all(soft_deleted_query), this will return
+all the non deleted entries
+```
